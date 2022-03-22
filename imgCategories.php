@@ -8,3 +8,9 @@
     Author URI: https://github.com/Douglas-Caraballo
     License:
 */
+
+defined('ABSPATH') or die("Bye bye");
+
+//Ruta principal del plugin
+defined('WPIC_RUTA', plugin_dir_path(__FILE__));
+
