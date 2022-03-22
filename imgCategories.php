@@ -12,5 +12,10 @@
 defined('ABSPATH') or die("Bye bye");
 
 //Ruta principal del plugin
-defined('WPIC_RUTA', plugin_dir_path(__FILE__));
+define('WPIC_RUTA', plugin_dir_path(__FILE__));
 
+//activacion del plugin
+require_once(WPIC_RUTA.'admin/controler/init.php');
+
+$imageCategory = new Init();
+$imageCategory -> InicialPlugin();
