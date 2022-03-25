@@ -16,6 +16,7 @@ define('WPIC_RUTA', plugin_dir_path(__FILE__));
 
 //activacion del plugin
 require_once(WPIC_RUTA.'admin/controler/init.php');
+require_once('functions.php');
 
 $imageCategory = new Init();
 $imageCategory -> InicialPlugin();

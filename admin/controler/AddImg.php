@@ -10,8 +10,8 @@ class AddImg{
         <input type="hidden" id="category-image-id" name="category-image-id" class="custom_media_url" value="">
         <div id="category-image-wrapper"></div>
         <p>
-            <input type="button" class="button tax_media_button" id="media_button" name="media_button" value="<?php _e('Add Image'); ?>">
-            <input type="button" class="button tax_media_remove" id="media_remove" name="media_remove" value="<?php _e('Remove Image'); ?>">
+            <input type="button" class="button button_plugin tax_media_button" id="media_button" name="media_button" value="<?php _e('Add Image'); ?>">
+            <input type="button" class="button button_plugin tax_media_remove" id="media_remove" name="media_remove" value="<?php _e('Remove Image'); ?>">
         </p>
     </div>
     <?php
@@ -40,8 +40,8 @@ class AddImg{
                     } ?>
                 </div>
                 <p>
-                    <input type="button" class="button tax_media_button" id="media_button" name="media_button" value="<?php _e( 'Add Image'); ?>">
-                    <input type="button" class="button tax_media_remove" id="media_remove" name="media_remove" value="<?php _e( 'Remove Image'); ?>">
+                    <input type="button" class="button button_plugin tax_media_button" id="media_button" name="media_button" value="<?php _e( 'Add Image'); ?>">
+                    <input type="button" class="button button_plugin tax_media_remove" id="media_remove" name="media_remove" value="<?php _e( 'Remove Image'); ?>">
                 </p>
             </td>
         </tr>
