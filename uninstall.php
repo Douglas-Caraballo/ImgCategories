@@ -3,13 +3,13 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
     die;
 }
 
-global $wpdb;
+/*global $wpdb;
 $tableName = $wpdb->prefix."termmeta";
 $metaKey = "category-image-id";
 
-$wpdb->query("DELETE FROM $tableName WHERE meta_key= $metaKey");
+$wpdb->query("DELETE FROM $tableName WHERE meta_key = $metaKey");
 
-/*$query = "DELETE * FROM $tableName WHERE meta_key= $metaKey";
+$query = "DELETE * FROM $tableName WHERE meta_key= $metaKey";
 
 $wpdb -> query($query);*/
 
