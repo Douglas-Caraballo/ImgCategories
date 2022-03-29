@@ -1,9 +1,14 @@
 <?php
 
-function ImgCategories(){
+function ImgCategories($atts){
+    extract(shortcode_atts( array(
+            'number'=>''
+    ), $atts));
     $categories= get_categories( array(
         'orderby'=> 'name',
-        'order'=> 'ASC'
+        'order'=> 'ASC',
+        'parent'=> 0,
+        'number'=> $number
     ));
 
     foreach($categories as $category){
