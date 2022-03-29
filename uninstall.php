@@ -7,6 +7,10 @@ global $wpdb;
 $tableName = $wpdb->prefix."termmeta";
 $metaKey = "category-image-id";
 
-$query = "DELETE * FROM $tableName WHERE meta_key= $metaKey";
+$wpdb->query("DELETE FROM $tableName WHERE meta_key= $metaKey");
 
-$wpdb -> query($query);
+/*$query = "DELETE * FROM $tableName WHERE meta_key= $metaKey";
+
+$wpdb -> query($query);*/
+
+wp_cache_flush();
