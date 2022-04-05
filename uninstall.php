@@ -13,11 +13,5 @@ $termMetaRecords = $wpdb-> get_results($wpdb->prepare(
 foreach($termMetaRecords as $termMeta){
     delete_term_meta( $termMeta->term_id, $metaKey);
 }
-/*
-$wpdb->query("DELETE FROM $tableName WHERE meta_key = $metaKey");
-
-$query = "DELETE * FROM $tableName WHERE meta_key= $metaKey";
-
-$wpdb -> query($query);*/
 
 wp_cache_flush();
