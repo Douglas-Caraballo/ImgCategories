@@ -7,8 +7,8 @@ global $wpdb;
 $tableName = $wpdb->prefix."termmeta";
 $metaKey = "category-image-id";
 
-$termMetaRecords = $wpdb-> get_results(
-    "SELECT term_id FROM $tableName WHERE meta_key = $metaKey",ARRAY_A
+$termMetaRecords = $wpdb-> get_results($wpdb->prepare(
+    "SELECT term_id FROM $tableName WHERE meta_key = %s",$metaKey)
 );
 foreach($termMetaRecords as $termMeta){
     delete_term_meta( $termMeta->term_id, $metaKey);
