@@ -11,7 +11,7 @@
 .categories-image-widget__wrapper__item__image{
     width: 5rem;
     height: 5rem;
-    .size-100{
+    img{
         width: 100%;
         height:100%;
         object-fit: cover;
