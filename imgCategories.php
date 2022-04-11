@@ -18,6 +18,7 @@ define('WPIC_RUTA', plugin_dir_path(__FILE__));
 require_once(WPIC_RUTA.'admin/controler/init.php');
 require_once('functions.php');
 require_once(WPIC_RUTA.'includes/shortcodes.php');
+require_once(WPIC_RUTA.'includes/widgets/widget-category-img.php');
 
 $imageCategory = new Init();
 $imageCategory -> InicialPlugin();
