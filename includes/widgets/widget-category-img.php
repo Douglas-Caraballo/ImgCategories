@@ -4,7 +4,7 @@ class Categories_Image_Widget extends WP_Widget {
 
     public function __construct() {
         $widget_options = array(
-            'classname' => 'categories_image_widget',
+            'classname' => 'categories-image-widget',
             'description' => 'Display categories with image',
         );
 
@@ -23,7 +23,7 @@ class Categories_Image_Widget extends WP_Widget {
 
         ?>
 
-            <div>
+            <div class="categories-image-widget__wrapper">
                 <?php
                 $categories= get_categories( array(
                     'orderby'=> 'name',
@@ -31,16 +31,18 @@ class Categories_Image_Widget extends WP_Widget {
                     'parent'=> 0,
                 ));
                     foreach($categories as $category){
-                        echo '<archive class="">
+                        echo '<archive class="categories-image-widget__wrapper__item">
                                 <a href="'.get_category_link( $category->term_id).'">
-                                <figure class="">'.
+                                <figure class="categories-image-widget__wrapper__item__image">'.
                                     wp_get_attachment_image(get_term_meta($category->term_id, 'category-image-id', true), '100').
                                 '
                                 </figure>
-                                <span class="">
-                                    '.$category->name.'
-                                </span>
                                 </a>
+                                <span class="">
+                                    <a href="'.get_category_link( $category->term_id).'">
+                                        '.$category->name.'
+                                    </a>
+                                </span>
                             </archive>';
                         }
                 ?>
