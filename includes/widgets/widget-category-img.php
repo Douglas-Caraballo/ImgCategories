@@ -13,12 +13,31 @@ class Categories_Image_Widget extends WP_Widget {
 
     // Back-end display of widget
     public function form( $instance ) {
-        echo 'Sin opciones para mostrar';
+        echo 'Si el numero a colocar es 0 traerá todas las categorias';
+
+        $defaults = array(
+            'number'=> 0
+        );
+
+        extract(wp_parse_args( (array) $instance, $defaults)); ?>
+
+    <p>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number category:', 'text_domain' ); ?></label>
+        <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" value="<?php echo esc_attr( $number ); ?>" />
+    </p>
+<?php
+    }
+
+    public function update($new_instance, $old_instance){
+        $instance = $old_instance;
+        $instance['number'] = isset($new_instance['number']) ? wp_strip_all_tags($new_instance['number']):'';
+        return $instance;
     }
 
     // Front-end display of widget
     public function widget( $args, $instance ) {
 
+        $number = isset($instance['number'])? $instance['number'] : '';
         echo $args[ 'before_widget' ];
 
         ?>
@@ -29,6 +48,7 @@ class Categories_Image_Widget extends WP_Widget {
                     'orderby'=> 'name',
                     'order'=> 'ASC',
                     'parent'=> 0,
+                    'number'=> $number
                 ));
                     foreach($categories as $category){
                         echo '<archive class="categories-image-widget__wrapper__item">
