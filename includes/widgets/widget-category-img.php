@@ -47,7 +47,6 @@ class Categories_Image_Widget extends WP_Widget {
                 $categories= get_categories( array(
                     'orderby'=> 'name',
                     'order'=> 'ASC',
-                    'parent'=> 0,
                     'number'=> $number
                 ));
                     foreach($categories as $category){
