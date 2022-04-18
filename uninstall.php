@@ -14,4 +14,6 @@ foreach($termMetaRecords as $termMeta){
     delete_term_meta( $termMeta->term_id, $metaKey);
 }
 
+add_shortcode( 'imgcategories', '__return_false');
+
 wp_cache_flush();
